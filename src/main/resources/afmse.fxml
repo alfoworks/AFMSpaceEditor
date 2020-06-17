@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="500.0" maxWidth="650.0" minHeight="500.0" minWidth="650.0" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="mapPane" maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D3D3D333,        linear-gradient(from 0.5px 0.0px to 10.5px  0.0px, repeat, black 5%, transparent 5%),        linear-gradient(from 0.0px 0.5px to  0.0px 10.5px, repeat, black 5%, transparent 5%);;">
+         <effect>
+            <DisplacementMap>
+               <mapData>
+                  <FloatMap />
+               </mapData>
+            </DisplacementMap>
+         </effect></Pane>
+      <FlowPane id="editorPane" layoutX="500.0" prefHeight="500.0" prefWidth="150.0">
+         <children>
+            <Label prefWidth="106.0" text="Edit Celestial Object" />
+            <Separator prefHeight="0.0" prefWidth="150.0">
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </Separator>
+            <Label prefHeight="17.0" prefWidth="150.0" text="WarpDrive ID" />
+            <TextField prefHeight="0.0" prefWidth="149.0" />
+            <Label layoutX="10.0" layoutY="70.0" prefHeight="17.0" prefWidth="150.0" text="Name" />
+            <TextField layoutX="10.0" layoutY="87.0" prefHeight="0.0" prefWidth="149.0" />
+            <Label layoutX="10.0" layoutY="112.0" prefHeight="17.0" prefWidth="150.0" text="Size" />
+            <TextField layoutX="10.0" layoutY="129.0" prefHeight="0.0" prefWidth="149.0" />
+            <Label layoutX="10.0" layoutY="154.0" prefHeight="17.0" prefWidth="150.0" text="Texture" />
+            <TextField layoutX="10.0" layoutY="171.0" prefHeight="0.0" prefWidth="149.0" />
+            <Label layoutX="10.0" layoutY="196.0" prefHeight="17.0" prefWidth="150.0" text="Dimension ID" />
+            <TextField layoutX="10.0" layoutY="213.0" prefHeight="0.0" prefWidth="149.0" />
+         </children>
+      </FlowPane>
+   </children>
+</Pane>

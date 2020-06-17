@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
 }
 
 configure<JavaPluginConvention> {
@@ -20,10 +21,16 @@ configure<JavaPluginConvention> {
 
 val fatJar = task("fatJar", type = Jar::class) {
     manifest {
-        attributes["Main-Class"] = "ru.alfomine.afmse.AFMSpaceEditor"
+        attributes["Main-Class"] = "ru.alfomine.afmse.MainKt"
     }
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
     with(tasks.jar.get() as CopySpec)
+}
+
+val runApp = task("runApp", type = Exec::class) {
+    if (tasks.jar.isPresent) {
+        commandLine("java", "-jar", tasks.jar.get().archiveFile.get().toString())
+    }
 }
 
 tasks {
@@ -33,5 +40,6 @@ tasks {
 
     build {
         dependsOn(fatJar)
+        finalizedBy(runApp)
     }
 }
