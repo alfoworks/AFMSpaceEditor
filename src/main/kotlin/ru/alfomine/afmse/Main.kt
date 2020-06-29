@@ -16,6 +16,8 @@ class AFMSpaceEditor : Application() {
         primaryStage?.isResizable = false
         primaryStage?.title = "ALFO:MINE SpaceEditor"
 
+        primaryStage?.sizeToScene()
+
         primaryStage?.show()
     }
 }

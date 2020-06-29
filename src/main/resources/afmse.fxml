@@ -1,42 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="500.0" maxWidth="650.0" minHeight="500.0" minWidth="650.0" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="window" maxHeight="545.0" maxWidth="680.0" minHeight="545.0" minWidth="680.0" prefHeight="545.0" prefWidth="680.0" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane id="mapPane" maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #D3D3D333,        linear-gradient(from 0.5px 0.0px to 10.5px  0.0px, repeat, black 5%, transparent 5%),        linear-gradient(from 0.0px 0.5px to  0.0px 10.5px, repeat, black 5%, transparent 5%);;">
-         <effect>
-            <DisplacementMap>
-               <mapData>
-                  <FloatMap />
-               </mapData>
-            </DisplacementMap>
-         </effect></Pane>
-      <FlowPane id="editorPane" layoutX="500.0" prefHeight="500.0" prefWidth="150.0">
+      <MenuBar prefHeight="25.0" prefWidth="680.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane id="mainPane" layoutY="25.0" prefHeight="520.0" prefWidth="680.0">
          <children>
-            <Label prefWidth="106.0" text="Edit Celestial Object" />
-            <Separator prefHeight="0.0" prefWidth="150.0">
-               <FlowPane.margin>
-                  <Insets />
-               </FlowPane.margin>
-               <padding>
-                  <Insets bottom="20.0" />
-               </padding>
-            </Separator>
-            <Label prefHeight="17.0" prefWidth="150.0" text="WarpDrive ID" />
-            <TextField prefHeight="0.0" prefWidth="149.0" />
-            <Label layoutX="10.0" layoutY="70.0" prefHeight="17.0" prefWidth="150.0" text="Name" />
-            <TextField layoutX="10.0" layoutY="87.0" prefHeight="0.0" prefWidth="149.0" />
-            <Label layoutX="10.0" layoutY="112.0" prefHeight="17.0" prefWidth="150.0" text="Size" />
-            <TextField layoutX="10.0" layoutY="129.0" prefHeight="0.0" prefWidth="149.0" />
-            <Label layoutX="10.0" layoutY="154.0" prefHeight="17.0" prefWidth="150.0" text="Texture" />
-            <TextField layoutX="10.0" layoutY="171.0" prefHeight="0.0" prefWidth="149.0" />
-            <Label layoutX="10.0" layoutY="196.0" prefHeight="17.0" prefWidth="150.0" text="Dimension ID" />
-            <TextField layoutX="10.0" layoutY="213.0" prefHeight="0.0" prefWidth="149.0" />
+            <Pane id="mapPane" layoutX="10.0" layoutY="10.0" maxHeight="500.0" maxWidth="500.0" minHeight="500.0" minWidth="500.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@css/main.css">
+               <children>
+                  <ToggleButton layoutX="56.0" layoutY="29.0" mnemonicParsing="false" text="ToggleButton" />
+               </children></Pane>
+            <TabPane id="tabPane" layoutX="520.0" layoutY="10.0" prefHeight="500.0" prefWidth="150.0" side="RIGHT" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="General">
+                     <content>
+                        <FlowPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" vgap="5.0">
+                           <children>
+                              <Label text="Space Size" textFill="WHITE" />
+                              <TextField prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Space Name" textFill="WHITE" />
+                              <TextField layoutX="10.0" layoutY="32.0" prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="62.0" text="Hyperspace Name" textFill="WHITE" />
+                              <TextField layoutX="10.0" layoutY="84.0" prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="114.0" text="Space Description" textFill="WHITE" />
+                              <TextArea prefHeight="130.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="166.0" text="Hyperpace Description" textFill="WHITE" />
+                              <TextArea layoutX="10.0" layoutY="188.0" prefHeight="130.0" prefWidth="120.0" />
+                           </children>
+                        </FlowPane>
+                     </content>
+                </Tab>
+                  <Tab text="Celestial Object">
+                     <content>
+                        <FlowPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" vgap="5.0">
+                           <children>
+                              <Label text="WarpDrive ID" textFill="WHITE" />
+                              <TextField prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Name" textFill="WHITE" />
+                              <TextField layoutX="10.0" layoutY="32.0" prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="62.0" text="Size" textFill="WHITE" />
+                              <TextField layoutX="10.0" layoutY="84.0" prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="114.0" text="Dimension ID" textFill="WHITE" />
+                              <TextField layoutX="10.0" layoutY="136.0" prefHeight="25.0" prefWidth="120.0" />
+                              <Label layoutX="10.0" layoutY="114.0" text="Space Description" textFill="WHITE" />
+                              <TextArea prefHeight="130.0" prefWidth="120.0" />
+                           </children>
+                        </FlowPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
          </children>
-      </FlowPane>
+      </Pane>
    </children>
 </Pane>
